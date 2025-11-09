@@ -31,6 +31,7 @@ import {
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import Logo from "./logo"
 
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -42,7 +43,7 @@ export default function NavBar() {
   }, [])
 
   const navItems = [
-    { label: "За нас", href: "#about" },
+    { label: "За нас", href: "/about" },
     {
       label: "Услуги",
       submenu: [
@@ -91,16 +92,17 @@ export default function NavBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo (Unchanged) */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="relative">
+          {/* <Link href="/" className="flex items-center gap-2 shrink-0"> */}
+            {/* <div className="relative">
               <Image
                 src="https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo.png"
                 alt="Ultrabuild"
                 width={180}
                 height={180}
               />
-            </div>
-          </Link>
+            </div> */}
+            <Logo />
+          {/* </Link> */}
 
           {/* Desktop Navigation (Unchanged) */}
           <div className="hidden md:flex items-center gap-1 lg:gap-2">
@@ -222,7 +224,7 @@ export default function NavBar() {
                       <Link
                         key={subitem.label}
                         href={subitem.href}
-                        className="flex items-center px-6 py-2 text-foreground/80 hover:text-primary transition-colors text-sm"
+                        className="flex items-center px-6 py-2 text-foreground/80 hover:text-primary gap-4 transition-colors text-sm"
                         onClick={() => setMobileOpen(false)}
                       >
                         {subitem.icon}
