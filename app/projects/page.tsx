@@ -27,17 +27,17 @@ export default function ProjectsPage() {
   return (
     <main className="w-full bg-background">
       {/* Header Section */}
-      <section className="w-full bg-gradient-to-b from-background to-muted py-12 px-4 sm:px-6 lg:px-8">
+      <section className="w-full text-center py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-2">Нашите Проекти</h1>
           <p className="text-lg text-muted-foreground">
-            Откройте нашите завършени проекти и видете как ние трансформираме инфраструктурата
+            Разгледайте нашите завършени проекти и вижте как ние трансформираме инфраструктура
           </p>
         </div>
       </section>
 
       {/* Projects Filter Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-12">
+      <section className="w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-12">

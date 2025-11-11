@@ -140,7 +140,7 @@ export function DimitarBlagoev() {
                     <div className="md:hidden absolute top-0 right-[15px] w-2 h-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)]" />
                   )}
                   {/* Mobile Timeline Dot + Number */}
-                  <div className="md:hidden flex items-center justify-center absolute top-0 -right-0.5 size-10 rounded-full bg-primary border-4 border-muted z-10">
+                  <div className="md:hidden flex items-center justify-center absolute -top-1 -right-0.5 size-10 rounded-full bg-primary border-4 border-muted z-10">
                     <span className="text-lg font-black text-primary-foreground">{index + 1}</span>
                   </div>
 

@@ -6,8 +6,21 @@ import VehicleGrid from "@/components/inventory/vehicle-grid"
 
 type VehicleCategory = "all" | "snowplows" | "heavy-duty" | "excavators" | "backhoe" | "skid-steer"
 
-const VEHICLE_DATA = {
-  snowplows: [
+type Vehicle = {
+  id: string
+  name: string
+  // The category here will be one of the specific types, not 'all'
+  category: Exclude<VehicleCategory, "all">
+  image: string
+  description: string
+  // This is the key fix: tells TS the 'specs' object is a simple
+  // key-value map of strings, which matches what VehicleGrid expects.
+  specs: Record<string, string>
+}
+
+type VehicleData = Record<Exclude<VehicleCategory, "all">, Vehicle[]>
+
+const VEHICLE_DATA: VehicleData = {  snowplows: [
     {
       id: "daf-lf-white",
       name: "DAF LF (Бял)",
