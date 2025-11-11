@@ -67,9 +67,9 @@ export default function NavBar() {
         },
       ],
     },
-    { label: "Инвентар", href: "#inventory" },
+    { label: "Инвентар", href: "/inventory" },
     { label: "Новини", href: "#news" },
-    { label: "Проекти", href: "#projects" },
+    { label: "Проекти", href: "/projects" },
     { label: "Контакти", href: "/contact" },
   ]
 
@@ -144,44 +144,36 @@ export default function NavBar() {
 
           {/* Right side - Contact & Theme (Unchanged) */}
           <div className="hidden lg:flex items-center gap-4 border-l border-border pl-4">
-            <div className="flex items-center gap-3 text-sm">
-              <div className="flex items-center gap-1">
-                <Phone className="w-4 h-4 text-primary" />
-                <a
-                  href="tel:0893277266"
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  0893 277 266
-                </a>
-              </div>
-              <div className="flex items-center gap-1">
-                <Mail className="w-4 h-4 text-primary" />
-                <a
-                  href="mailto:office@ultrabuild.bg"
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  office@ultrabuild.bg
-                </a>
-              </div>
-            </div>
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 text-foreground hover:bg-muted rounded-md transition-colors"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-4 h-4" />
-                ) : (
-                  <Moon className="w-4 h-4" />
-                )}
-              </button>
-            )}
+
+
+          <div className="flex items-center lg:flex-col lg:items-start xl:flex-row  gap-3 xl:text-sm text-xs">
+          <div className="flex items-center gap-1">
+            <Phone className="w-4 h-4 text-primary" />
+            <a
+              href="tel:0893277266"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              0893 277 266
+            </a>
+          </div>
+          <div className="flex items-center gap-1">
+            <Mail className="w-4 h-4 text-primary" />
+            <a
+              href="mailto:office@ultrabuild.bg"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              office@ultrabuild.bg
+            </a>
+          </div>
+        </div>
+
           </div>
 
+
+
           {/* === CHANGED: Mobile menu button & theme toggle === */}
-          <div className="flex md:hidden items-center gap-2">
-            {mounted && (
+          <div className="flex">
+          {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-2 text-foreground hover:bg-muted rounded-md"
@@ -194,6 +186,8 @@ export default function NavBar() {
                 )}
               </button>
             )}
+          <div className="flex md:hidden items-center gap-2">
+
             {/* NEW: Replaced the old button with the animated one */}
             <AnimatedHamburgerButton
               isOpen={mobileOpen}
@@ -201,13 +195,13 @@ export default function NavBar() {
             />
           </div>
         </div>
-
+        </div>
         {/* === CHANGED: Mobile Navigation === */}
         {/* NEW: Wrapped in AnimatePresence for open/close animation */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
-              className="md:hidden pb-4 space-y-2 border-t border-border pt-4 overflow-hidden" // NEW: Added overflow-hidden
+              className="md:hidden  space-y-2 border-t border-border pt-4 overflow-hidden" // NEW: Added overflow-hidden
               initial="closed"
               animate="open"
               exit="closed"
@@ -243,7 +237,7 @@ export default function NavBar() {
                   </Link>
                 ),
               )}
-              <div className="flex flex-col gap-2 px-3 py-4 border-t border-border pt-4 text-sm">
+              <div className="flex justify-between items-center gap-2 px-8 py-4 border-t border-border text-sm">
                 <a
                   href="tel:0893277266"
                   className="text-foreground hover:text-primary transition-colors flex items-center gap-2"

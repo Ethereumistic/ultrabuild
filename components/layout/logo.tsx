@@ -23,12 +23,8 @@ const Logo = () => {
       href="/"
       className="
         flex items-center 
-        
-        // --- Mobile Layout (default) ---
         flex-col gap-1 
-        
-        // --- Desktop Layout (md: breakpoint) ---
-        md:flex-row md:gap-2.5
+        xl:flex-row xl:gap-2.5
       "
       aria-label="Ultrabuild Homepage"
     >
@@ -40,7 +36,7 @@ const Logo = () => {
           
           object-contain       // Ensures aspect ratio is maintained
           w-[60px] h-[41px]    // Mobile size (default)
-          md:w-[90px] md:h-[62px] // Desktop size (md breakpoint)
+          xl:w-[90px] xl:h-[62px] // Desktop size (md breakpoint)
         "
         width={90}  // Base width (largest size)
         height={62} // Base height (largest size)
@@ -53,14 +49,14 @@ const Logo = () => {
           
           object-contain       // Ensures aspect ratio is maintained
           w-[60px] h-[41px]    // Mobile size (default)
-          md:w-[90px] md:h-[62px] // Desktop size (md breakpoint)
+          lg:w-[90px] lg:h-[62px] // Desktop size (md breakpoint)
         "
         width={90}  // Base width (largest size)
         height={62} // Base height (largest size)
       /> */}
       <span 
         className="
-          font-semibold tracking-wide text-base md:text-xl text-secondary dark:text-white/80
+          font-semibold tracking-wide text-base xl:text-xl text-secondary dark:text-white/80
         "
       >
         ULTRABUILD

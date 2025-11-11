@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Building2, Award, Users, Zap, CheckCircle2, Construction } from "lucide-react"
+import Link from "next/link"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -64,33 +65,60 @@ export default function AboutPage() {
 
   return (
     <div className="w-full bg-background">
-      {/* Hero Section */}
-      <section className="relative w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 border-b border-border">
+{/* Hero Section */}
+<section className="relative w-full px-4 py-8">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="space-y-6"
+            // MODIFIED: Switched to a grid for a 2-column layout on medium screens and up
+            className="grid md:grid-cols-2 gap-12 items-center"
           >
-            <motion.div variants={itemVariants} className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground text-balance leading-tight">
-                За нас
-              </h1>
-              <div className="w-20 h-1 bg-primary"></div>
+            {/* Left Column: Original Text */}
+            <motion.div variants={itemVariants} className="space-y-6">
+              <div className="space-y-2">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground text-balance leading-tight">
+                  За нас
+                </h1>
+                <div className="w-20 h-1 bg-primary"></div>
+              </div>
+
+              <p className="text-lg sm:text-xl text-muted-foreground">
+                {/* MODIFIED: Removed max-w-3xl, the grid column handles width */}
+                "УЛТРА БИЛД" ООД е българска частна компания, специализирана в изпълнението на инфраструктурно
+                строителство с над 7 години опит. Ние вярваме в качеството, надеждността и устойчивото развитие.
+              </p>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-muted-foreground max-w-3xl">
-              "УЛТРА БИЛД" ООД е българска частна компания, специализирана в изпълнението на инфраструктурно
-              строителство с над 7 години опит. Ние вярваме в качеството, надеждността и устойчивото развитие.
-            </motion.p>
+            {/* Right Column: NEW CONTENT (using your 'credentials' array) */}
+            <motion.div variants={itemVariants} className="hidden md:block gap-2 flex">
+
+
+<motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+              {achievements.map((achievement, idx) => {
+                const Icon = achievement.icon
+                return (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -5 }}
+                    className="bg-muted/50 border border-border p-6 space-y-2 hover:border-primary/50 transition-colors"
+                  >
+                    <Icon className="w-8 h-8 text-primary" />
+                    <p className="text-3xl font-bold text-foreground">{achievement.value}</p>
+                    <p className="text-sm text-muted-foreground">{achievement.label}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Company Story */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <section className="w-full px-4 py-8 md:py-16 ">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -113,7 +141,12 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="space-y-3">
+
+            </motion.div>
+
+            {/* Right Column - Stats Grid */}
+
+                <div className="space-y-3">
                 <h3 className="font-semibold text-foreground text-lg">Ключови направления:</h3>
                 {services.map((service, idx) => (
                   <motion.div key={idx} variants={itemVariants} className="flex gap-3 items-start">
@@ -125,10 +158,8 @@ export default function AboutPage() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
 
-            {/* Right Column - Stats Grid */}
-            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+                          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 md:hidden">
               {achievements.map((achievement, idx) => {
                 const Icon = achievement.icon
                 return (
@@ -144,12 +175,17 @@ export default function AboutPage() {
                 )
               })}
             </motion.div>
+
+              
           </motion.div>
         </div>
       </section>
 
-      {/* Timeline/Milestones */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-muted/30 border-y border-border">
+      <div className="w-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)] py-1"></div>
+
+
+{/* Timeline/Milestones */}
+<section className="w-full px-4 py-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -162,7 +198,8 @@ export default function AboutPage() {
               Нашата история
             </motion.h2>
 
-            <div className="space-y-8">
+            {/* MODIFIED: Changed from 'space-y-8' to a responsive grid */}
+            <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-8">
               {[
                 {
                   year: "2017",
@@ -187,14 +224,27 @@ export default function AboutPage() {
                     "Поддържане на АМ 'ТРАКИЯ'; разширяване на портфолиото на услуги; укрепване на позицията като надежден партньор",
                 },
               ].map((milestone, idx) => (
-                <motion.div key={idx} variants={itemVariants} className="flex gap-4 sm:gap-8">
-                  <div className="flex flex-col items-center">
+                // MODIFIED: Item layout changes to 'flex-col' on desktop
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  className="flex gap-4 sm:gap-8 md:flex-col md:gap-4"
+                >
+                  {/* MODIFIED: Bubble/Line container now supports 'flex-row' on desktop */}
+                  <div className="flex flex-col items-center md:flex-row md:w-full md:items-center">
                     <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0">
                       {idx + 1}
                     </div>
-                    {idx < 3 && <div className="w-1 h-20 bg-primary/20 mt-4"></div>}
+
+                    {/* Vertical Line (Mobile Only) */}
+                    {idx < 3 && <div className="w-1 h-20 bg-primary/20 mt-4 md:hidden"></div>}
+
+                    {/* Horizontal Line (Desktop Only) */}
+                    {idx < 3 && <div className="hidden md:block flex-1 h-1 bg-primary/20 ml-4"></div>}
                   </div>
-                  <div className="pb-8">
+
+                  {/* MODIFIED: Adjusted padding for desktop */}
+                  <div className="pb-8 md:pb-0 md:mt-2">
                     <p className="text-sm font-semibold text-primary mb-1">{milestone.year}</p>
                     <h3 className="text-xl font-bold text-foreground mb-2">{milestone.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{milestone.description}</p>
@@ -206,8 +256,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      
+
       {/* Credentials Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <section className="w-full px-4 sm:px-6 py-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -239,7 +291,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-foreground text-background">
+      <section className="w-full px-8 py-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -278,8 +330,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <div className="w-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)] py-1"></div>
+
+
       {/* CTA Section */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24 border-t border-border">
+      <section className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-16">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             variants={containerVariants}
@@ -296,16 +351,21 @@ export default function AboutPage() {
               безупречност.
             </motion.p>
             <motion.div variants={itemVariants} className="flex gap-4 justify-center">
+              <Link href="/contact" >
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 Свържете се с нас
               </Button>
+              </Link>
+
+              <Link href="/services" >
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-foreground bg-transparent"
+                className="dark:hover:text-white hover:bg-secondary hover:text-secondary-foreground"
               >
                 Преглед на услуги
               </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
