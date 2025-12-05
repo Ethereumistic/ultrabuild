@@ -167,13 +167,7 @@ export default function NavBar() {
           </div>
         </div>
 
-          </div>
-
-
-
-          {/* === CHANGED: Mobile menu button & theme toggle === */}
-          <div className="flex">
-          {mounted && (
+        {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-2 text-foreground hover:bg-muted rounded-md"
@@ -186,7 +180,15 @@ export default function NavBar() {
                 )}
               </button>
             )}
-          <div className="flex md:hidden items-center gap-2">
+
+          </div>
+
+
+
+          {/* === CHANGED: Mobile menu button & theme toggle === */}
+          <div className="flex">
+
+          <div className="md:hidden flex items-center gap-2">
 
             {/* NEW: Replaced the old button with the animated one */}
             <AnimatedHamburgerButton

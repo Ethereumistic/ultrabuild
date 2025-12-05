@@ -6,8 +6,7 @@ import { Card } from "@/components/ui/card"
 export function EUProjectInfo() {
   return (
     <>
-    <section className="py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section className="pt-8 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
 
 
         {/* Main Project Card */}
@@ -135,7 +134,6 @@ export function EUProjectInfo() {
             Европейския съюз или органите на управление на него.
           </p>
         </div> */}
-      </div>
       
     </section>
         <div className="w-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)] py-1"></div>

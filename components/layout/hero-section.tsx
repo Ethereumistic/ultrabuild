@@ -90,7 +90,7 @@ export default function HeroSection() {
 
   return (
     <div className="relative w-full">
-      <div className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] lg:h-[900px] overflow-hidden bg-black">
+      <div className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] lg:h-[814px] overflow-hidden bg-black">
         {/* Image Slider */}
         <AnimatePresence mode="wait">
           <motion.img

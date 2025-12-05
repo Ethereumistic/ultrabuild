@@ -5,6 +5,7 @@ import Link from 'next/link';
 // Define logo URLs
 const LIGHT_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/light.png";
 const DARK_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/dark.png";
+const UB_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo-light.png";
 
 /**
  * A responsive logo component for ULTRABUILD.
@@ -17,7 +18,7 @@ const Logo = () => {
   // --- Mobile dimensions (1.5x smaller than 90x62) ---
   // Width: 90 / 1.5 = 60px
   // Height: 62 / 1.5 = 41.33px (we'll use 41px)
-  
+
   return (
     <Link
       href="/"
@@ -29,7 +30,7 @@ const Logo = () => {
       aria-label="Ultrabuild Homepage"
     >
       <Image
-        src={LIGHT_LOGO_URL}
+        src={UB_LOGO_URL}
         alt="Ultrabuild Logo"
         className="
            
@@ -54,7 +55,7 @@ const Logo = () => {
         width={90}  // Base width (largest size)
         height={62} // Base height (largest size)
       /> */}
-      <span 
+      <span
         className="
           font-semibold tracking-wide text-base xl:text-xl text-secondary dark:text-white/80
         "

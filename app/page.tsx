@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection /> 
       <ServicesFunnel />
       <EUProjectInfo />
-      <div className="text-center pt-8">
+      <div className="text-center pt-4">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance leading-tight mb-4 ">
             <span className="text-primary">Нашите Проекти</span>
             <br />
