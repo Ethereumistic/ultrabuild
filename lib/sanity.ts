@@ -6,7 +6,7 @@ export const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-    useCdn: false, // Set to true for production for faster response
+    useCdn: process.env.NODE_ENV === 'production',
 })
 
 // Image URL builder
@@ -23,7 +23,7 @@ export async function getProjectTypes(): Promise<ProjectType[]> {
         title,
         icon
     }`
-    return await client.fetch(query)
+    return await client.fetch(query, {}, { next: { revalidate: 3600 } })
 }
 
 // Fetch all projects with populated references
@@ -42,5 +42,5 @@ export async function getProjects(): Promise<Project[]> {
         processTitle,
         phases
     }`
-    return await client.fetch(query)
+    return await client.fetch(query, {}, { next: { revalidate: 3600 } })
 }
