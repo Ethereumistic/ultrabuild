@@ -6,6 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { SanityProject } from "@/components/projects/sanity-project"
 import { Project, ProjectType } from "@/types/sanity"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 interface ProjectsClientProps {
     projectTypes: ProjectType[]
@@ -81,6 +82,7 @@ export function ProjectsClient({ projectTypes, sanityProjects }: ProjectsClientP
                 </div>
             </section>
 
+
             {/* CTA Section */}
             <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-background">
                 <div className="max-w-7xl mx-auto text-center">
@@ -90,9 +92,11 @@ export function ProjectsClient({ projectTypes, sanityProjects }: ProjectsClientP
                     <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-2xl mx-auto">
                         Свържете се с нас днес и открийте как УЛТРА БИЛД може да трансформира вашия проект.
                     </p>
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 font-semibold">
-                        Свържете се с нас
-                    </Button>
+                    <Link href="/contact">
+                        <Button className="bg-primary cursor-pointer text-primary-foreground hover:bg-primary/90 px-8 py-3 font-semibold">
+                            Свържете се с нас
+                        </Button>
+                    </Link>
                 </div>
             </section>
         </main>

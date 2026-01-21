@@ -29,8 +29,8 @@ const hqInfo = {
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      text: "office@ultrabuild.bg",
-      href: "mailto:office@ultrabuild.bg",
+      text: "ultrabild@gmail.com",
+      href: "mailto:ultrabild@gmail.com",
     },
   ],
   mapEmbedUrl:
@@ -49,8 +49,8 @@ const storageInfo = {
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      text: "stefanov@ultrabuild.bg",
-      href: "mailto:stefanov@ultrabuild.bg",
+      text: "office@ultrabuild.bg",
+      href: "mailto:office@ultrabuild.bg",
     },
   ],
   mapEmbedUrl:
@@ -89,7 +89,7 @@ export default function ContactPage() {
         {/* === Main Grid (CHANGED) === */}
         {/* This is now a 4-column grid on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
-          
+
           {/* Column 1: Contact Form (spans 2) */}
           <motion.div
             {...fadeIn(0.2)}
@@ -102,11 +102,11 @@ export default function ContactPage() {
           {/* Column 2: Info Area (spans 2) */}
           {/* This div contains the nested grid for all info cards */}
           <div className="lg:col-span-2">
-            
+
             {/* --- NESTED GRID START --- */}
             {/* On mobile, 1 col. On tablet+, 2 cols. */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
-              
+
 
 
               {/* HQ (spans one nested column) */}
@@ -124,8 +124,8 @@ export default function ContactPage() {
               >
                 <ContactInfoCard {...storageInfo} />
               </motion.div>
-                            {/* Work Hours (spans both nested columns) */}
-                            <motion.div
+              {/* Work Hours (spans both nested columns) */}
+              <motion.div
                 {...fadeIn(0.4)}
                 className="md:col-span-2"
               >
@@ -133,7 +133,7 @@ export default function ContactPage() {
               </motion.div>
             </div>
             {/* --- NESTED GRID END --- */}
-            
+
           </div>
         </div>
       </div>

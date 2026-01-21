@@ -14,7 +14,7 @@ export function SanityProject({ project }: SanityProjectProps) {
     const CategoryIcon = getLucideIcon(project.projectType.icon)
 
     return (
-        <div className="w-full py-4">
+        <div className="w-full ">
             {/* Top Section: 2 Col Grid */}
             <section className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                 <div className="max-w-7xl mx-auto">
@@ -168,6 +168,7 @@ export function SanityProject({ project }: SanityProjectProps) {
                 </div>
             </section>
 
+            <div className="w-full mt-8 md:mt-12 bg-[repeating-linear-gradient(45deg,#f9831e_0px,#f9831e_20px,#202020_20px,#202020_40px)] py-1"></div>
 
         </div>
     )
