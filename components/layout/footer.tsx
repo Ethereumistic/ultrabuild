@@ -36,7 +36,6 @@ const Footer = () => {
         legal: [
             { label: "Общи условия", href: "/terms" },
             { label: "Политика за поверителност", href: "/privacy" },
-            { label: "Бисквитки", href: "/cookies" },
         ],
     }
 
