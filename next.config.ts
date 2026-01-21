@@ -80,8 +80,12 @@ const nextConfig: NextConfig = {
   // Redirects if needed (example for www to non-www)
   async redirects() {
     return [
-      // Add any permanent redirects here for SEO
-      // Example: redirect old URLs to new ones
+      {
+        // Redirect Studio to Vercel deployment
+        source: "/studio/:path*",
+        destination: "https://ultrabuild-studio.vercel.app/studio/:path*", // REPLACE with your actual Vercel URL
+        permanent: false,
+      },
     ];
   },
 }
