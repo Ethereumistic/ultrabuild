@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
+import { usePathname } from "next/navigation"
 
 // NEW: Import motion and AnimatePresence for animations
 import { motion, AnimatePresence } from "framer-motion"
@@ -37,10 +38,16 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Hide NavBar on /studio routes
+  if (pathname?.startsWith("/studio")) {
+    return null
+  }
 
   const navItems = [
     { label: "За нас", href: "/about" },
@@ -142,7 +149,7 @@ export default function NavBar() {
           </div>
 
           {/* Right side - Contact & Theme (Unchanged) */}
-          <div className="hidden lg:flex items-center gap-4 border-l border-border pl-4">
+          <div className="hidden lg:flex items-center gap-4 border-l border-border pl-12">
 
 
             <div className="flex items-center lg:flex-col lg:items-start xl:flex-row  gap-3 xl:text-sm text-xs">
@@ -198,63 +205,75 @@ export default function NavBar() {
           </div>
         </div>
         {/* === CHANGED: Mobile Navigation === */}
-        {/* NEW: Wrapped in AnimatePresence for open/close animation */}
+        {/* Positioned absolute to overlay content instead of pushing it down */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div
-              className="md:hidden  space-y-2 border-t border-border pt-4 overflow-hidden" // NEW: Added overflow-hidden
-              initial="closed"
-              animate="open"
-              exit="closed"
-              variants={mobileMenuVariants as any}
-            >
-              {/* The content inside is unchanged, but it will now animate */}
-              {navItems.map((item) =>
-                "submenu" in item ? (
-                  <div key={item.label} className="space-y-2">
-                    <div className="px-3 py-2 text-foreground font-medium">
-                      {item.label}
-                    </div>
-                    {item.submenu?.map((subitem) => (
+            <>
+              {/* Backdrop overlay - closes menu when clicked */}
+              <motion.div
+                className="md:hidden fixed inset-0 top-20 bg-black/20 z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setMobileOpen(false)}
+              />
+              <motion.div
+                className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg z-50 overflow-hidden"
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={mobileMenuVariants as any}
+              >
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 space-y-2">
+                  {/* The content inside is unchanged, but it will now animate */}
+                  {navItems.map((item) =>
+                    "submenu" in item ? (
+                      <div key={item.label} className="space-y-2">
+                        <div className="px-3 py-2 text-foreground font-medium">
+                          {item.label}
+                        </div>
+                        {item.submenu?.map((subitem) => (
+                          <Link
+                            key={subitem.label}
+                            href={subitem.href}
+                            className="flex items-center px-6 py-2 text-foreground/80 hover:text-primary gap-4 transition-colors text-sm"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {subitem.icon}
+                            <span>{subitem.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
                       <Link
-                        key={subitem.label}
-                        href={subitem.href}
-                        className="flex items-center px-6 py-2 text-foreground/80 hover:text-primary gap-4 transition-colors text-sm"
+                        key={item.label}
+                        href={item.href}
+                        className="block px-3 py-2 text-foreground hover:text-primary transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {subitem.icon}
-                        <span>{subitem.label}</span>
+                        {item.label}
                       </Link>
-                    ))}
+                    ),
+                  )}
+                  <div className="flex justify-between items-center gap-2 px-8 py-4 border-t border-border text-sm">
+                    <a
+                      href="tel:0893277266"
+                      className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <Phone className="w-4 h-4 text-primary" />
+                      0893 277 266
+                    </a>
+                    <a
+                      href="mailto:office@ultrabuild.bg"
+                      className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <Mail className="w-4 h-4 text-primary" />
+                      office@ultrabuild.bg
+                    </a>
                   </div>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="block px-3 py-2 text-foreground hover:text-primary transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ),
-              )}
-              <div className="flex justify-between items-center gap-2 px-8 py-4 border-t border-border text-sm">
-                <a
-                  href="tel:0893277266"
-                  className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <Phone className="w-4 h-4 text-primary" />
-                  0893 277 266
-                </a>
-                <a
-                  href="mailto:office@ultrabuild.bg"
-                  className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <Mail className="w-4 h-4 text-primary" />
-                  office@ultrabuild.bg
-                </a>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>

@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
 import {
     Phone,
     Mail,
@@ -20,6 +21,12 @@ import Logo from "./logo"
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
+    const pathname = usePathname()
+
+    // Hide Footer on /studio routes
+    if (pathname?.startsWith("/studio")) {
+        return null
+    }
 
     const footerLinks = {
         services: [
@@ -81,7 +88,6 @@ const Footer = () => {
                     {/* Services Column */}
                     <div>
                         <h4 className="font-semibold text-foreground mb-6 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                             Услуги
                         </h4>
                         <ul className="space-y-4">
@@ -104,7 +110,6 @@ const Footer = () => {
                     {/* Company Column */}
                     <div>
                         <h4 className="font-semibold text-foreground mb-6 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                             Компания
                         </h4>
                         <ul className="space-y-4">
@@ -125,7 +130,6 @@ const Footer = () => {
                     {/* Contact Column */}
                     <div>
                         <h4 className="font-semibold text-foreground mb-6 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                             Контакти
                         </h4>
                         <ul className="space-y-4">
