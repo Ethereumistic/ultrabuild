@@ -51,7 +51,7 @@ const projectImages = [
 
 // 1. Define the form schema with Zod
 const formSchema = z.object({
-  name: z.string().min(2, "Името трябва да е поне 2 символа."),
+  name: z.string().min(2, "Името трябва да е минимум 2 символа."),
   email: z
     .string()
     .email("Моля, въведете валиден имейл.")
@@ -72,7 +72,7 @@ export function ContactForm() {
   const [submissionStatus, setSubmissionStatus] = useState<
     "success" | "error" | null
   >(null)
-  
+
   // State for the background slider
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -139,7 +139,7 @@ export function ContactForm() {
     // Card is now relative and overflow-hidden to contain the slider
     // Added h-full to make it fill the grid cell
     <Card className="h-full relative overflow-hidden">
-      
+
       {/* === Background Slider === */}
       <AnimatePresence mode="wait">
         <motion.img
@@ -155,7 +155,7 @@ export function ContactForm() {
       </AnimatePresence>
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60 z-10"></div>
-      
+
       {/* === Form Content === */}
       {/* This content now sits on top of the overlay (z-20) */}
       <div className="relative z-20 h-full flex flex-col">
@@ -280,7 +280,7 @@ export function ContactForm() {
                 )}
               </div>
 
-              
+
             </form>
 
 

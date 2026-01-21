@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:worker": "opennextjs-cloudflare build",
-    "build:vercel": "NEXT_DISABLE_TURBOPACK=1 next build",
+    "build:vercel": "NEXT_UNSTABLE_TURBO=0 NEXT_DISABLE_TURBOPACK=1 next build",
     "start": "next start",
     "lint": "eslint",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
