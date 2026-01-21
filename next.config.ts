@@ -80,19 +80,9 @@ const nextConfig: NextConfig = {
   // Redirects if needed (example for www to non-www)
   async redirects() {
     return [
-      {
-        // Redirect Studio to Vercel deployment
-        source: "/studio/:path*",
-        destination: "https://ultrabuild.vercel.app/studio/:path*", // REPLACE with your actual Vercel URL
-        permanent: false,
-      },
+      // Add any permanent redirects here for SEO
     ];
   },
 }
 
 export default nextConfig
-
-// Enable calling `getCloudflareContext()` in `next dev`.
-// See https://opennext.js.org/cloudflare/bindings#local-access-to-bindings
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-initOpenNextCloudflareForDev();
