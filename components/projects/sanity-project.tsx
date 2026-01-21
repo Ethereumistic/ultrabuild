@@ -1,10 +1,10 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { Project } from "@/types/sanity"
 import { getLucideIcon } from "@/lib/icon-mapper"
 import { urlForImage } from "@/lib/sanity"
+import { ProjectImage } from "@/components/projects/project-image"
 
 interface SanityProjectProps {
     project: Project
@@ -43,10 +43,10 @@ export function SanityProject({ project }: SanityProjectProps) {
                                     <CarouselContent>
                                         {project.heroMedia.imageCarousel.map((image, idx) => (
                                             <CarouselItem key={idx}>
-                                                <img
+                                                <ProjectImage
                                                     src={urlForImage(image).width(1920).url()}
                                                     alt={`${project.title} - Image ${idx + 1}`}
-                                                    className="w-full h-auto object-cover aspect-video rounded-xl"
+                                                    className="w-full aspect-video rounded-xl"
                                                 />
                                             </CarouselItem>
                                         ))}
@@ -55,10 +55,10 @@ export function SanityProject({ project }: SanityProjectProps) {
                                     <CarouselNext className="right-4" />
                                 </Carousel>
                             ) : project.heroMedia?.singleImage ? (
-                                <img
+                                <ProjectImage
                                     src={urlForImage(project.heroMedia.singleImage).width(1920).url()}
                                     alt={project.title}
-                                    className="w-full h-auto object-cover aspect-video rounded-xl"
+                                    className="w-full aspect-video rounded-xl"
                                 />
                             ) : (
                                 <div className="w-full aspect-video bg-muted rounded-xl flex items-center justify-center">
@@ -115,10 +115,10 @@ export function SanityProject({ project }: SanityProjectProps) {
                                                     <CarouselContent>
                                                         {phase.media.imageCarousel.map((image, idx) => (
                                                             <CarouselItem key={idx}>
-                                                                <img
+                                                                <ProjectImage
                                                                     src={urlForImage(image).width(1920).url()}
                                                                     alt={`${phase.title} - Image ${idx + 1}`}
-                                                                    className="w-full h-auto object-cover aspect-video rounded-xl shadow-xl"
+                                                                    className="w-full aspect-video rounded-xl shadow-xl"
                                                                 />
                                                             </CarouselItem>
                                                         ))}
@@ -127,10 +127,10 @@ export function SanityProject({ project }: SanityProjectProps) {
                                                     <CarouselNext className="right-4" />
                                                 </Carousel>
                                             ) : phase.media?.singleImage ? (
-                                                <img
+                                                <ProjectImage
                                                     src={urlForImage(phase.media.singleImage).width(1920).url()}
                                                     alt={phase.title}
-                                                    className="w-full h-auto object-cover aspect-video rounded-xl shadow-xl"
+                                                    className="w-full aspect-video rounded-xl shadow-xl"
                                                 />
                                             ) : (
                                                 <div className="w-full aspect-video bg-muted rounded-xl flex items-center justify-center">

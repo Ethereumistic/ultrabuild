@@ -18,7 +18,7 @@ export function ProjectsClient({ projectTypes, sanityProjects }: ProjectsClientP
 
     // Build tabs from Sanity project types
     const tabs = [
-        { id: "all", label: "Всички проекти" },
+        { id: "all", label: "Всички" },
         ...projectTypes.map(type => ({
             id: type._id,
             label: type.title,

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckCircle2, Hammer, AlertCircle, Zap, Construction } from "lucide-react"
+import Link from "next/link"
 
 const PROJECT_DATA = {
   title: "Нова кръговата развързка Димитър Благоев",
@@ -145,7 +146,7 @@ export function DimitarBlagoev() {
                   </div>
 
                   {/* --- NEW: DESKTOP Timeline (Center) --- */}
-                  
+
                   {/* --- DELETED: Old per-item desktop line --- */}
 
                   {/* --- FIX: DESKTOP Timeline Dot + Icon --- */}
@@ -212,9 +213,9 @@ export function DimitarBlagoev() {
           <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-2xl mx-auto">
             Свържете се с нас днес и открийте как УЛТРА БИЛД може да трансформира вашия проект.
           </p>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 font-semibold">
+          <Link href="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 font-semibold">
             Свържете се с нас
-          </Button>
+          </Link>
         </div>
       </section>
     </div>
