@@ -123,7 +123,7 @@ export function DimitarBlagoev() {
           <div className="relative space-y-0 md:space-y-20">
             {/* --- NEW: DESKTOP Full Vertical Line --- */}
             {/* This single line spans the full height of the container on desktop */}
-            <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)] z-0" />
+            <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-full bg-[repeating-linear-gradient(45deg,#f9831e_0px,#f9831e_20px,#202020_20px,#202020_40px)] z-0" />
 
             {PROJECT_DATA.timeline.map((item, index) => {
               const isEven = index % 2 === 1
@@ -137,7 +137,7 @@ export function DimitarBlagoev() {
                   {/* --- NEW: MOBILE Timeline (Left Side) --- */}
                   {/* Mobile Vertical Line (don't show on last item) */}
                   {!isLastItem && (
-                    <div className="md:hidden absolute top-0 right-[15px] w-2 h-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)]" />
+                    <div className="md:hidden absolute top-0 right-[15px] w-2 h-full bg-[repeating-linear-gradient(45deg,#f9831e_0px,#f9831e_20px,#202020_20px,#202020_40px)]" />
                   )}
                   {/* Mobile Timeline Dot + Number */}
                   <div className="md:hidden flex items-center justify-center absolute -top-1 -right-0.5 size-10 rounded-full bg-primary border-4 border-muted z-10">

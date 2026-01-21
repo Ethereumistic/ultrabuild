@@ -68,7 +68,6 @@ export default function NavBar() {
       ],
     },
     { label: "Инвентар", href: "/inventory" },
-    { label: "Новини", href: "#news" },
     { label: "Проекти", href: "/projects" },
     { label: "Контакти", href: "/contact" },
   ]
@@ -93,7 +92,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo (Unchanged) */}
           {/* <Link href="/" className="flex items-center gap-2 shrink-0"> */}
-            {/* <div className="relative">
+          {/* <div className="relative">
               <Image
                 src="https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo.png"
                 alt="Ultrabuild"
@@ -101,7 +100,7 @@ export default function NavBar() {
                 height={180}
               />
             </div> */}
-            <Logo />
+          <Logo />
           {/* </Link> */}
 
           {/* Desktop Navigation (Unchanged) */}
@@ -146,28 +145,28 @@ export default function NavBar() {
           <div className="hidden lg:flex items-center gap-4 border-l border-border pl-4">
 
 
-          <div className="flex items-center lg:flex-col lg:items-start xl:flex-row  gap-3 xl:text-sm text-xs">
-          <div className="flex items-center gap-1">
-            <Phone className="w-4 h-4 text-primary" />
-            <a
-              href="tel:0893277266"
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              0893 277 266
-            </a>
-          </div>
-          <div className="flex items-center gap-1">
-            <Mail className="w-4 h-4 text-primary" />
-            <a
-              href="mailto:office@ultrabuild.bg"
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              office@ultrabuild.bg
-            </a>
-          </div>
-        </div>
+            <div className="flex items-center lg:flex-col lg:items-start xl:flex-row  gap-3 xl:text-sm text-xs">
+              <div className="flex items-center gap-1">
+                <Phone className="w-4 h-4 text-primary" />
+                <a
+                  href="tel:0893277266"
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  0893 277 266
+                </a>
+              </div>
+              <div className="flex items-center gap-1">
+                <Mail className="w-4 h-4 text-primary" />
+                <a
+                  href="mailto:ultrabild@gmail.com"
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  ultrabild@gmail.com
+                </a>
+              </div>
+            </div>
 
-        {mounted && (
+            {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-2 text-foreground hover:bg-muted rounded-md"
@@ -188,15 +187,15 @@ export default function NavBar() {
           {/* === CHANGED: Mobile menu button & theme toggle === */}
           <div className="flex">
 
-          <div className="md:hidden flex items-center gap-2">
+            <div className="md:hidden flex items-center gap-2">
 
-            {/* NEW: Replaced the old button with the animated one */}
-            <AnimatedHamburgerButton
-              isOpen={mobileOpen}
-              onClick={() => setMobileOpen(!mobileOpen)}
-            />
+              {/* NEW: Replaced the old button with the animated one */}
+              <AnimatedHamburgerButton
+                isOpen={mobileOpen}
+                onClick={() => setMobileOpen(!mobileOpen)}
+              />
+            </div>
           </div>
-        </div>
         </div>
         {/* === CHANGED: Mobile Navigation === */}
         {/* NEW: Wrapped in AnimatePresence for open/close animation */}

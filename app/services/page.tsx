@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Construction, Building, Trees } from "lucide-react"
+import Link from "next/link"
 
 const services = [
   {
@@ -16,7 +17,7 @@ const services = [
     shortName: "Пътища",
     icon: <Construction className="w-4 h-4" />,
     images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png",
-        "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png"],
+      "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png"],
     description: `Квалифицирани и амбициозни инженери и технически специалисти с десетилетия опит. Оборудвани с необходима пътностроителна техника, за развитието на съвременната пътна инфраструктура.`,
     highlights: [
       "Съвременна техника и машини",
@@ -86,10 +87,10 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 text-balance">
-          Нашите основни услуги
+            Нашите основни услуги
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-          Цялостни решения за инфраструктура, обновяване на сгради и градско развитие.
+            Цялостни решения за инфраструктура, обновяване на сгради и градско развитие.
           </p>
         </div>
 
@@ -188,14 +189,18 @@ export default function ServicesPage() {
                           size="lg"
                           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base py-6"
                         >
-                          {service.cta}
+                          <Link href="/contact">
+                            Свържи се с нас
+                          </Link>
                         </Button>
                         <Button
                           size="lg"
                           variant="outline"
-                          className="w-full border-primary text-primary hover:bg-primary/10 font-semibold text-base py-6 bg-transparent"
+                          className="w-full border-primary hover:text-white font-semibold text-base py-6"
                         >
-                          Schedule Consultation
+                          <Link href="/projects">
+                            Виж проекти
+                          </Link>
                         </Button>
                       </div>
                     </div>
@@ -206,22 +211,6 @@ export default function ServicesPage() {
           </Tabs>
         </div>
 
-        {/* Bottom CTA Section (Unchanged) */}
-        <div className="mt-16 md:mt-24 text-center space-y-6 bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
-            Ready to Transform Your Project?
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Contact our team today to discuss your specific needs and get a custom solution tailored to your
-            requirements.
-          </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base px-8 py-6"
-          >
-            Get in Touch
-          </Button>
-        </div>
       </div>
     </main>
   )

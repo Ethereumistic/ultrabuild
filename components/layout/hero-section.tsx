@@ -176,7 +176,7 @@ export default function HeroSection() {
           </motion.p>
         </div>
       </div>
-      <div className="w-full bg-[repeating-linear-gradient(45deg,#FAC300_0px,#FAC300_20px,#202020_20px,#202020_40px)] py-1"></div>
+      <div className="w-full bg-[repeating-linear-gradient(45deg,#f9831e_0px,#f9831e_20px,#202020_20px,#202020_40px)] py-1"></div>
 
     </div>
   )
