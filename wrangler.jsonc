@@ -4,11 +4,25 @@
     "main": ".open-next/worker.js",
     "compatibility_date": "2025-01-01",
     "compatibility_flags": [
-        "nodejs_compat"
+        "nodejs_compat",
+        "global_fetch_strictly_public"
     ],
-    // Use the new Workers Assets to host the static frontend files
     "assets": {
         "directory": ".open-next/assets",
         "binding": "ASSETS"
+    },
+    "images": {
+        "binding": "IMAGES"
+    },
+    "services": [
+        {
+            "binding": "WORKER_SELF_REFERENCE",
+            "service": "ultrabuild"
+        }
+    ],
+    "vars": {
+        "NEXT_PUBLIC_SANITY_PROJECT_ID": "icddf1yh",
+        "NEXT_PUBLIC_SANITY_DATASET": "production",
+        "NEXT_PUBLIC_SANITY_API_VERSION": "2025-01-12"
     }
 }
