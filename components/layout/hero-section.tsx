@@ -118,7 +118,7 @@ export default function HeroSection() {
             "bottom-6 left-6 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12", // Bottom-Left
             "bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12", // Bottom-Right
           ]
-          
+
           // Determine animation props based on index
           const animationProps = {
             initial: { opacity: 0, x: idx % 2 === 0 ? -20 : 20, y: idx < 2 ? -20 : 20 },
@@ -162,7 +162,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance leading-tight"
           >
-            Изграждане на инфраструктурата на България.
+            Изграждане на инфраструктурата <br /> на България.
             <br /> <span className="text-primary">От пътища до фасади.</span>
           </motion.h1>
 
