@@ -1,9 +1,11 @@
 import { defineCloudflareConfig } from "@opennextjs/cloudflare";
+import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/static-assets-incremental-cache";
 
 export default defineCloudflareConfig({
-    // Uncomment to enable R2 cache,
-    // It should be imported as:
-    // `import r2IncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/r2-incremental-cache";`
-    // See https://opennext.js.org/cloudflare/caching for more details
-    // incrementalCache: r2IncrementalCache,
+    // Use static assets for build-time cached routes (SSG)
+    // This is read-only and doesn't require R2 or D1
+    // Note: Time-based revalidation (ISR) is not supported with this cache
+    incrementalCache: staticAssetsIncrementalCache,
+    // Enable cache interception for better cold start performance
+    enableCacheInterception: true,
 });
