@@ -1,0 +1,444 @@
+
+--- 2026-01-21T15:45:17.194Z debug
+🪵  Writing logs to "C:\Users\badja\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-01-21_15-45-17_091.log"
+---
+
+--- 2026-01-21T15:45:17.194Z debug
+Metrics dispatcher: Posting data {"deviceId":"cfe7df62-4b47-47de-b47f-e95041dd098c","event":"wrangler command started","timestamp":1769010317194,"properties":{"amplitude_session_id":1769010317193,"amplitude_event_id":0,"wranglerVersion":"4.59.3","wranglerMajorVersion":4,"wranglerMinorVersion":59,"wranglerPatchVersion":3,"osPlatform":"Windows","osVersion":"Windows 11 Pro","nodeVersion":22,"packageManager":"pnpm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":true,"argsUsed":[],"argsCombination":"","agent":null,"command":"wrangler deploy","args":{}}}
+---
+
+--- 2026-01-21T15:45:17.199Z debug
+.env file not found at "C:\Users\badja\Documents\Projects_Developement\Websites\ultrabuild\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-01-21T15:45:17.225Z log
+
+ ⛅️ wrangler 4.59.3
+───────────────────
+---
+
+--- 2026-01-21T15:45:17.269Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/memberships
+---
+
+--- 2026-01-21T15:45:17.269Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:17.269Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:17.269Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:17.269Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:18.867Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:18.867Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:18.867Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:18.867Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:18.868Z debug
+Saving to cache: {"account":{"id":"ccb39f37d9a46c36f7ded1cc121968a8","name":"Badjarovv@gmail.com's Account"}}
+---
+
+--- 2026-01-21T15:45:18.869Z debug
+Starting verifyWorkerMatchesCITag() with tag: undefined, name: ultrabuild
+---
+
+--- 2026-01-21T15:45:18.869Z debug
+No WRANGLER_CI_MATCH_TAG variable provided, aborting verifyWorkerMatchesCITag()
+---
+
+--- 2026-01-21T15:45:18.870Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/services/ultrabuild
+---
+
+--- 2026-01-21T15:45:18.870Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:18.870Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:18.870Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:18.870Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.639Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:20.639Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.639Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.639Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/services/ultrabuild/environments/production/bindings
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/services/ultrabuild/environments/production/routes?show_zonename=true
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.640Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.641Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/domains/records?page=0&per_page=5&service=ultrabuild&environment=production
+---
+
+--- 2026-01-21T15:45:20.641Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.641Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.641Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.641Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.642Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/services/ultrabuild/environments/production/subdomain
+---
+
+--- 2026-01-21T15:45:20.642Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.642Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.642Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.642Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.643Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/services/ultrabuild/environments/production
+---
+
+--- 2026-01-21T15:45:20.643Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.643Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.643Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.643Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:20.644Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/scripts/ultrabuild/schedules
+---
+
+--- 2026-01-21T15:45:20.644Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.644Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.644Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:20.644Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:22.066Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:22.066Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.066Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.066Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:22.254Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:22.254Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.254Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.254Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:22.312Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:22.312Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.312Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.312Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:22.328Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:22.328Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.328Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.328Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:22.631Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:22.632Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.632Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:22.632Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:23.797Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:23.798Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:23.798Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:23.798Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:23.833Z warn
+▲ [WARNING] The local configuration being used (generated from your local configuration file) differs from the remote configuration of your Worker set via the Cloudflare Dashboard:
+
+   {
+  +  assets: {
+  +    binding: "ASSETS"
+  +  }
+  -  compatibility_date: "2026-01-21"
+  +  compatibility_date: "2025-05-05"
+     vars: {
+  -    NODE_ENV: "production"
+     }
+   }
+  
+  
+  Deploying the Worker will override the remote configuration
+  with your local one.
+
+
+---
+
+--- 2026-01-21T15:45:27.021Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/scripts/ultrabuild/secrets
+---
+
+--- 2026-01-21T15:45:27.021Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:27.021Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:27.021Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:27.021Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:28.601Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:28.602Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:28.602Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:28.602Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:28.603Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/ccb39f37d9a46c36f7ded1cc121968a8/workers/scripts/ultrabuild/deployments
+---
+
+--- 2026-01-21T15:45:28.603Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:28.603Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:28.603Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:28.603Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-01-21T15:45:29.898Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-01-21T15:45:29.898Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:29.898Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-01-21T15:45:29.898Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-01-21T15:45:30.536Z debug
+Writing additional module to output C:\Users\badja\Documents\Projects_Developement\Websites\ultrabuild\.wrangler\tmp\deploy-alE5HV\77d9faebf7af9e421806970ce10a58e9d83116d7-resvg.wasm?module
+---
+
+--- 2026-01-21T15:45:30.538Z log
+
+---
+
+--- 2026-01-21T15:45:30.538Z debug
+File not found error: ENOENT: no such file or directory, open 'C:\Users\badja\Documents\Projects_Developement\Websites\ultrabuild\.wrangler\tmp\deploy-alE5HV\77d9faebf7af9e421806970ce10a58e9d83116d7-resvg.wasm?module'
+---
+
+--- 2026-01-21T15:45:30.539Z error
+X [ERROR] A file or directory could not be found.
+
+  
+  Missing file or directory:
+  C:\Users\badja\Documents\Projects_Developement\Websites\ultrabuild\.wrangler\tmp\deploy-alE5HV\77d9faebf7af9e421806970ce10a58e9d83116d7-resvg.wasm?module
+  
+  This is typically caused by:
+    - The file or directory does not exist
+    - A typo in the file path
+    - The file was moved or deleted
+  
+  Please check the file path and try again.
+
+
+---
+
+--- 2026-01-21T15:45:30.540Z debug
+Metrics dispatcher: Posting data {"deviceId":"cfe7df62-4b47-47de-b47f-e95041dd098c","event":"wrangler command errored","timestamp":1769010330540,"properties":{"amplitude_session_id":1769010317193,"amplitude_event_id":1,"wranglerVersion":"4.59.3","wranglerMajorVersion":4,"wranglerMinorVersion":59,"wranglerPatchVersion":3,"osPlatform":"Windows","osVersion":"Windows 11 Pro","nodeVersion":22,"packageManager":"pnpm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":true,"argsUsed":[],"argsCombination":"","agent":null,"command":"wrangler deploy","args":{},"durationMs":13357,"durationSeconds":13.357,"durationMinutes":0.22261666666666666,"errorType":"FileNotFoundError"}}
+---
