@@ -83,7 +83,7 @@ const nextConfig: NextConfig = {
       {
         // Redirect Studio to Vercel deployment
         source: "/studio/:path*",
-        destination: "https://ultrabuild.vercel.app/studio/:path*", // REPLACE with your actual Vercel URL
+        destination: "https://ultrabuild.vercel.app/studio/", // REPLACE with your actual Vercel URL
         permanent: false,
       },
     ];
