@@ -2,26 +2,20 @@ import { defineCloudflareConfig } from "@opennextjs/cloudflare";
 import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incremental-cache/static-assets-incremental-cache";
 
 const baseConfig = defineCloudflareConfig({
-    // Use static assets for build-time cached routes (SSG)
     incrementalCache: staticAssetsIncrementalCache,
-    // Enable cache interception for better cold start performance
     enableCacheInterception: true,
 });
 
-// We manually extend the config to add code splitting and minification
-// This helps stay under the 3MB Cloudflare Workers Free limit
+// Remove "minify: true" as it crashes on Cloudflare with pnpm symlinks.
+// Next.js already handles minification.
 export default {
     ...baseConfig,
-    default: {
-        ...baseConfig.default,
-        minify: true,
-    },
     functions: {
         studio: {
-            // Move the heavy Sanity Studio to its own worker
+            // Move the heavy Sanity Studio to its own worker function.
+            // This is the key to staying under the 3MB limit for the main site.
             routes: ["app/studio/[[...tool]]/page"],
             patterns: ["studio/*"],
-            minify: true,
         },
     },
 };
