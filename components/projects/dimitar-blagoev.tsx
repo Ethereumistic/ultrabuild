@@ -213,9 +213,21 @@ export function DimitarBlagoev() {
           <p className="text-muted-foreground text-base sm:text-lg mb-8 max-w-2xl mx-auto">
             Свържете се с нас днес и открийте как УЛТРА БИЛД може да трансформира вашия проект.
           </p>
-          <Link href="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 font-semibold">
-            Свържете се с нас
+
+
+          <Link href="/contact" className="mx-4">
+            <Button className=" cursor-pointer"
+              variant="default" >
+              Свържете се с нас
+            </Button>
           </Link>
+          <Link href="/projects" className="mx-4">
+            <Button className="hover:text-white cursor-pointer"
+              variant="outline" >
+              Повече проекти
+            </Button>
+          </Link>
+
         </div>
       </section>
     </div>

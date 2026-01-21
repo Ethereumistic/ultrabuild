@@ -11,8 +11,8 @@ export default function PrivacyPage() {
         <main className="min-h-screen pt-32 pb-20 px-4 md:px-8 ">
             <div className="max-w-4xl mx-auto backdrop-blur-md bg-white/[0.02] p-8 md:p-12  border border-white/10 shadow-2xl relative overflow-hidden">
                 {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -mr-32 -mt-32" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px] -ml-32 -mb-32" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10   blur-[100px] -mr-32 -mt-32" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5   blur-[100px] -ml-32 -mb-32" />
 
                 <h1 className="text-3xl md:text-5xl font-bold mb-12 text-white tracking-tight bg-gradient-to-br from-white via-white to-white/40 bg-clip-text">
                     Политика за поверителност на личните данни в УЛТРА БИЛД
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-white">2.1 Администратор на лични данни</h3>
-                                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 space-y-3 shadow-inner">
+                                <div className="bg-white/5 p-6    border border-white/5 space-y-3 shadow-inner">
                                     <div>
                                         <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Наименование</p>
                                         <p className="text-gray-200">УЛТРА БИЛД</p>
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
 
                             <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-white">2.2 Надзорен орган (КЗЛД)</h3>
-                                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 space-y-3 shadow-inner">
+                                <div className="bg-white/5 p-6    border border-white/5 space-y-3 shadow-inner">
                                     <div>
                                         <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Адрес</p>
                                         <p className="text-gray-200">гр. София 1592, бул. "Проф. Цветан Лазаров" № 2</p>
@@ -103,14 +103,14 @@ export default function PrivacyPage() {
                         <p className="mb-6">УЛТРА БИЛД може да събира за единствено следните данни:</p>
                         <div className="flex flex-wrap gap-3 mb-8">
                             {["име и фамилия", "телефонен номер", "адрес на електронна поща"].map((tag) => (
-                                <span key={tag} className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+                                <span key={tag} className="px-4 py-2   bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                                     {tag}
                                 </span>
                             ))}
                         </div>
                         <p className="italic mb-8">които предоставяте, като попълвате форми за контакт в сайта</p>
 
-                        <div className="p-6 bg-yellow-500/5 border border-yellow-500/10 rounded-2xl">
+                        <div className="p-6 bg-yellow-500/5 border border-yellow-500/10   ">
                             <p className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Ние не събираме специални категории данни:</p>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
                                 {[
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
                                     "данни за присъди и престъпления"
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-2 text-gray-500">
-                                        <span className="w-1 h-1 rounded-full bg-yellow-500/50" />
+                                        <span className="w-1 h-1   bg-yellow-500/50" />
                                         {item}
                                     </li>
                                 ))}
@@ -144,14 +144,14 @@ export default function PrivacyPage() {
                             <p className="text-white font-medium">Понастоящем единствено обработваме данните Ви с цел:</p>
                             <ul className="space-y-3">
                                 {["Обработка на запитвания", "Оказване на съдействие", "Персонализирана комуникация с вас"].map((goal, i) => (
-                                    <li key={i} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+                                    <li key={i} className="flex items-center gap-4 bg-white/5 p-4   border border-white/5">
                                         <span className="text-primary font-bold">0{i + 1}</span>
                                         <span className="text-gray-300">{goal}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <p className="mt-8 text-sm bg-blue-500/5 p-4 rounded-xl border border-blue-500/10">
+                        <p className="mt-8 text-sm bg-blue-500/5 p-4   border border-blue-500/10">
                             Понастоящем не обработваме данните ви с цел изпращане на оферти или маркетингови съобщения. Ако планираме такива действия в бъдеще, то ще бъде направено само с предварителното ви съгласие.
                         </p>
                     </section>

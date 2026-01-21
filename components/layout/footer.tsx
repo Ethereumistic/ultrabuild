@@ -167,7 +167,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-sm text-muted-foreground text-center md:text-left">
-                        © {currentYear} <span className="text-foreground font-semibold">УЛТРАБИЛД ЕООД</span>. Всички права запазени.
+                        © {currentYear} <span className="text-foreground font-semibold">ULTRABUILD.BG</span>. Всички права запазени.
                     </div>
 
                     <div className="flex flex-col items-center gap-2">

@@ -119,7 +119,7 @@ export const baseMetadata: Metadata = {
         description: siteConfig.description,
         images: [
             {
-                url: "/og-image.png", // You'll need to create this
+                url: "/og-image.jpg", // You'll need to create this
                 width: 1200,
                 height: 630,
                 alt: `${siteConfig.name} - Строителна компания`,
@@ -133,7 +133,7 @@ export const baseMetadata: Metadata = {
         card: "summary_large_image",
         title: `${siteConfig.name} | Пътно Строителство и Благоустройство`,
         description: siteConfig.shortDescription,
-        images: ["/og-image.png"],
+        images: ["/og-image.jpg"],
     },
 
     // Icons configuration
@@ -399,7 +399,7 @@ export function createPageMetadata({
         twitter: {
             title,
             description,
-            images: images?.map((img) => img.url) || ["/og-image.png"],
+            images: images?.map((img) => img.url) || ["/og-image.jpg"],
         },
         robots: noIndex
             ? { index: false, follow: false }
