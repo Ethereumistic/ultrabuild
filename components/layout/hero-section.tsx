@@ -162,7 +162,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance leading-tight"
           >
-            Изграждане на инфраструктурата <br /> на България.
+            Цялостни инфраструктурни решения.
             <br /> <span className="text-primary">От пътища до фасади.</span>
           </motion.h1>
 

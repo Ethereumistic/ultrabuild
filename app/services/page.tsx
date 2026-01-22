@@ -7,7 +7,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
-import { Construction, Building, Trees } from "lucide-react"
+import { Construction, Building, Trees, Pickaxe } from "lucide-react"
 import Link from "next/link"
 
 const services = [
@@ -64,6 +64,23 @@ const services = [
     ],
     caseStudy:
       "Успешно сме реализирали проекти за градско развитие, създавайки модерни обществени пространства. Нашият подход дава приоритет на устойчивостта, достъпността и ангажираността на общността, което води до процъфтяващи обществени пространства, които се превръщат в местни забележителности.",
+    cta: "Start Your Project Today",
+  },
+  {
+    id: "mining",
+    name: "Производство на инертни материали",
+    shortName: "Инертни материали",
+    icon: <Pickaxe className="w-4 h-4" />,
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.png"],
+    description: `Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.`,
+    highlights: [
+      "Добив и преработка на инертни материали",
+      "Производство на трошен камък, фракции и пясък",
+      "Материали за пътно, инфраструктурно и сградно строителство",
+      "Надеждни доставки за обекти и строителни площадки",
+    ],
+    caseStudy:
+      "Производството се осъществява чрез свързаното дружество „СПН КОНСТРУКШЪН“ ООД, което управлява кариера „Крачола“, с. Бояджик. Със собствена материално-техническа база и утвърдени производствени процеси, осигуряваме постоянни обеми и високо качество на инертните материали, използвани както в наши проекти, така и за външни възложители.",
     cta: "Start Your Project Today",
   },
 ]

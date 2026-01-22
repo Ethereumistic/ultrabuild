@@ -12,6 +12,7 @@ import {
   Construction,
   Trees,
   Building,
+  Pickaxe,
 } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
@@ -71,6 +72,12 @@ export default function NavBar() {
           href: "/services?tab=urban",
           icon: <Trees className="w-4 h-4" />,
           description: "Озеленяване, паркови алеи и зони за отдих.",
+        },
+        {
+          label: "Производство на инертни материали",
+          href: "/services?tab=mining",
+          icon: <Pickaxe className="w-4 h-4" />,
+          description: "Добив и производство на инертни материали.",
         },
       ],
     },

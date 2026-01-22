@@ -16,6 +16,7 @@ import {
     Building,
     Trees,
     Wifi,
+    Pickaxe,
 } from "lucide-react"
 import Logo from "./logo"
 
@@ -33,6 +34,7 @@ const Footer = () => {
             { label: "Пътно строителство", href: "/services?tab=roads", icon: <Construction /> },
             { label: "Саниране и фасади", href: "/services?tab=facades", icon: <Building /> },
             { label: "Градско строителство", href: "/services?tab=urban", icon: <Trees /> },
+            { label: "Инертни материали", href: "/services?tab=mining", icon: <Pickaxe /> },
         ],
         company: [
             { label: "За нас", href: "/about" },

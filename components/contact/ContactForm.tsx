@@ -56,6 +56,7 @@ const formSchema = z.object({
     .string()
     .email("Моля, въведете валиден имейл.")
     .min(1, "Имейлът е задължителен."),
+  phone: z.string().min(6, "Моля, въведете валиден телефонен номер."),
   message: z
     .string()
     .min(10, "Съобщението трябва да е поне 10 символа.")
@@ -89,6 +90,7 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
       "bot-check": "",
     },
@@ -109,6 +111,7 @@ export function ContactForm() {
       formData.append("access_key", WEB3FORMS_ACCESS_KEY)
       formData.append("name", values.name)
       formData.append("email", values.email)
+      formData.append("phone", values.phone)
       formData.append("message", values.message)
       formData.append("subject", "Ново запитване от сайта на Ultrabuild")
 
@@ -183,15 +186,58 @@ export function ContactForm() {
                 className="hidden"
               />
               <div className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white/90">Име</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Вашето име"
+                            {...field}
+                            disabled={isSubmitting}
+                            // Custom style for dark background
+                            className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-primary" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white/90">Имейл</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="vashiat@email.bg"
+                            {...field}
+                            disabled={isSubmitting}
+                            // Custom style for dark background
+                            className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-primary" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
                 <FormField
                   control={form.control}
-                  name="name"
+                  name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white/90">Име</FormLabel>
+                      <FormLabel className="text-white/90">Телефон</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Вашето име"
+                          type="tel"
+                          placeholder="+359 ..."
                           {...field}
                           disabled={isSubmitting}
                           // Custom style for dark background
@@ -202,26 +248,7 @@ export function ContactForm() {
                     </FormItem>
                   )}
                 />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white/90">Имейл</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="vashiat@email.bg"
-                          {...field}
-                          disabled={isSubmitting}
-                          // Custom style for dark background
-                          className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70"
-                        />
-                      </FormControl>
-                      <FormMessage className="text-primary" />
-                    </FormItem>
-                  )}
-                />
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -235,7 +262,7 @@ export function ContactForm() {
                           rows={6}
                           disabled={isSubmitting}
                           // Custom style for dark background
-                          className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70 h-64"
+                          className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/70 h-48"
                         />
                       </FormControl>
                       <FormMessage className="text-primary" />

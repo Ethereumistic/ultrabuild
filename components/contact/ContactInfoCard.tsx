@@ -15,9 +15,12 @@ interface ContactInfoCardProps {
   contacts: {
     icon: React.ReactNode
     text: string
+    name?: string
     href: string
   }[]
-  mapEmbedUrl: string
+  mapEmbedUrl?: string
+  mapUrl?: string
+  className?: string
 }
 
 export function ContactInfoCard({
@@ -26,23 +29,23 @@ export function ContactInfoCard({
   address,
   contacts,
   mapEmbedUrl,
+  mapUrl,
+  className,
 }: ContactInfoCardProps) {
   return (
-    // We use h-full and flex flex-col to make the card fill the
-    // height of its parent grid cell
-    <Card className="h-full flex flex-col">
-      <CardHeader>
-        <CardTitle className="flex text-2xl items-center gap-2">
+    <Card className={`flex flex-col ${className || ""}`}>
+      <CardHeader className="pb-2">
+        <CardTitle className="flex text-3xl items-center gap-3">
           {icon}
           {title}
         </CardTitle>
       </CardHeader>
-      
+
       {/* This CardContent is also a flex-col, allowing us to use
         a flex-grow spacer to push the map to the bottom.
       */}
       <CardContent className="space-y-4 h-full flex flex-col">
-        
+
         {/* === SOLUTION ===
             By adding a 'min-h-24' (6rem), we ensure that this address
             block always occupies at least that much vertical space.
@@ -50,52 +53,80 @@ export function ContactInfoCard({
             section below it, regardless of whether the address is
             1 line or 4 lines.
         */}
-        <div className="flex items-start gap-2 min-h-18">
-          <Pin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-          <div className="space-y-1">
-            {address.map((line, idx) => (
-              <p key={idx} className="text-sm text-muted-foreground">
-                {line}
-              </p>
-            ))}
+        {mapUrl ? (
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-start gap-2 min-h-18 group/address hover:opacity-80 transition-opacity"
+          >
+            <Pin className="w-4 h-4 text-primary shrink-0 mt-1 group-hover/address:scale-110 transition-transform" />
+            <div className="space-y-1">
+              {address.map((line, idx) => (
+                <p key={idx} className="text-sm text-muted-foreground group-hover/address:text-primary transition-colors">
+                  {line}
+                </p>
+              ))}
+              <span className="text-[10px] text-primary font-medium opacity-0 group-hover/address:opacity-100 transition-opacity">Виж в Google Maps →</span>
+            </div>
+          </a>
+        ) : (
+          <div className="flex items-start gap-3 min-h-18">
+            <Pin className="w-5 h-5 text-primary shrink-0 mt-1" />
+            <div className="space-y-2">
+              {address.map((line, idx) => (
+                <p key={idx} className="text-base text-muted-foreground">
+                  {line}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Contact Links */}
-        <div className="space-y-2">
+        <div className="space-y-6">
           {contacts.map((contact, idx) => (
             <a
               key={idx}
               href={contact.href}
-              className="flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-4 text-foreground hover:text-primary transition-colors group"
             >
-              <span className="text-primary">{contact.icon}</span>
-              <span>{contact.text}</span>
+              <div className="flex items-center justify-center w-6 h-6 text-primary shrink-0">
+                {contact.icon}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-base font-medium leading-none mb-1">
+                  {contact.text}
+                </span>
+                {contact.name && (
+                  <span className="text-sm text-muted-foreground leading-none">
+                    {contact.name}
+                  </span>
+                )}
+              </div>
             </a>
           ))}
         </div>
 
         {/* This div grows to fill all available space, pushing
             the map to the very bottom of the card. */}
-        <div className="flex-grow"></div>
+        <div className="grow"></div>
 
         {/* Embedded Map */}
-        {/* We add 'mt-4' to give it some space from the contact
-            links, in case the flex-grow spacer is small on
-            large screens. */}
-        <div className="overflow-hidden rounded-md border mt-4">
-          <iframe
-            src={mapEmbedUrl}
-            width="100%"
-            height="250"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            // This CSS filter inverts the map in dark mode
-            className="dark:invert dark:grayscale"
-          ></iframe>
-        </div>
+        {mapEmbedUrl && (
+          <div className="overflow-hidden rounded-md border mt-4">
+            <iframe
+              src={mapEmbedUrl}
+              width="100%"
+              height="250"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="dark:invert dark:grayscale"
+            ></iframe>
+          </div>
+        )}
       </CardContent>
     </Card>
   )

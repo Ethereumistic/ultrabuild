@@ -54,19 +54,23 @@ export default function AboutPage() {
       description: "Проектиране, изграждане и поддържане на съвременни пътни мрежи",
     },
     {
+      title: "Благоустройство",
+      description: "Инфраструктурни решения за общественото благоустройство",
+    },
+    {
       title: "Саниране на сгради",
       description: "Реставрация и обновяване на фасади на търговски и жилищни сгради",
     },
     {
-      title: "Благоустройство",
-      description: "Инфраструктурни решения за общественото благоустройство",
+      title: "Производство на инертни материали",
+      description: "Добив и производство на инертни материали от кариера „Крачола“",
     },
   ]
 
   return (
     <div className="w-full bg-background">
-{/* Hero Section */}
-<section className="relative w-full px-4 py-8">
+      {/* Hero Section */}
+      <section className="relative w-full px-4 py-8">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -96,22 +100,22 @@ export default function AboutPage() {
             <motion.div variants={itemVariants} className="hidden md:block gap-2 flex">
 
 
-<motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
-              {achievements.map((achievement, idx) => {
-                const Icon = achievement.icon
-                return (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ y: -5 }}
-                    className="bg-muted/50 border border-border p-6 space-y-2 hover:border-primary/50 transition-colors"
-                  >
-                    <Icon className="w-8 h-8 text-primary" />
-                    <p className="text-3xl font-bold text-foreground">{achievement.value}</p>
-                    <p className="text-sm text-muted-foreground">{achievement.label}</p>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
+              <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+                {achievements.map((achievement, idx) => {
+                  const Icon = achievement.icon
+                  return (
+                    <motion.div
+                      key={idx}
+                      whileHover={{ y: -5 }}
+                      className="bg-muted/50 border border-border p-6 space-y-2 hover:border-primary/50 transition-colors"
+                    >
+                      <Icon className="w-8 h-8 text-primary" />
+                      <p className="text-3xl font-bold text-foreground">{achievement.value}</p>
+                      <p className="text-sm text-muted-foreground">{achievement.label}</p>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -130,36 +134,47 @@ export default function AboutPage() {
             {/* Left Column - Text */}
             <motion.div variants={itemVariants} className="space-y-6">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Ние строим България</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+                  Ние строим устойчиви основи
+                </h2>
+
                 <p className="text-foreground/80 leading-relaxed mb-4">
-                  През 2017 година, "УЛТРА БИЛД" ООД се основа с ясна мисия: доставяне на висококачествени
-                  инфраструктурни решения, които служат на общностите и развиват икономиката.
+                  През 2017 година, „УЛТРА БИЛД“ ООД се основа с ясна мисия: доставяне на
+                  висококачествени инфраструктурни решения, които служат на общностите и
+                  развиват икономиката.
                 </p>
+
+                <p className="text-foreground/80 leading-relaxed mb-4">
+                  Основната дейност на дружеството е строителство и поддръжка на пътища и
+                  съоръжения. Компанията разполага със собствена материално-техническа база
+                  и квалифициран инженерно-технически състав.
+                </p>
+
                 <p className="text-foreground/80 leading-relaxed">
-                  Днес изпълняваме комплексни проекти по пътна инфраструктура, благоустройство и поддържане на пътища.
-                  Нашата база е във Ямбол, и работим активно на територията на Ямболска и Хасковска области.
+                  Свързано дружество с „УЛТРА БИЛД“ ООД е „СПН КОНСТРУКШЪН“ ООД, чиято основна
+                  дейност е производство и преработка на инертни материали от кариера
+                  „Крачола“, с. Бояджик.
                 </p>
               </div>
-
-
             </motion.div>
+
 
             {/* Right Column - Stats Grid */}
 
-                <div className="space-y-3">
-                <h3 className="font-semibold text-foreground text-lg">Ключови направления:</h3>
-                {services.map((service, idx) => (
-                  <motion.div key={idx} variants={itemVariants} className="flex gap-3 items-start">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium text-foreground">{service.title}</p>
-                      <p className="text-sm text-muted-foreground">{service.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="space-y-5">
+              <h3 className="font-semibold text-foreground text-lg">Ключови направления:</h3>
+              {services.map((service, idx) => (
+                <motion.div key={idx} variants={itemVariants} className="flex gap-3 items-start">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-foreground">{service.title}</p>
+                    <p className="text-sm text-muted-foreground">{service.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
-                          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 md:hidden">
+            <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 md:hidden">
               {achievements.map((achievement, idx) => {
                 const Icon = achievement.icon
                 return (
@@ -176,7 +191,7 @@ export default function AboutPage() {
               })}
             </motion.div>
 
-              
+
           </motion.div>
         </div>
       </section>
@@ -184,8 +199,8 @@ export default function AboutPage() {
       <div className="w-full bg-[repeating-linear-gradient(45deg,#f9831e_0px,#f9831e_20px,#202020_20px,#202020_40px)] py-1"></div>
 
 
-{/* Timeline/Milestones */}
-<section className="w-full px-4 py-8 md:py-16">
+      {/* Timeline/Milestones */}
+      <section className="w-full px-4 py-8 md:py-16">
         <div className="mx-auto max-w-6xl">
           <motion.div
             variants={containerVariants}
@@ -256,7 +271,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+
 
       {/* Credentials Section */}
       <section className="w-full px-4 sm:px-6 py-8 md:py-16">
@@ -352,19 +367,19 @@ export default function AboutPage() {
             </motion.p>
             <motion.div variants={itemVariants} className="flex gap-4 justify-center">
               <Link href="/contact" >
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Свържете се с нас
-              </Button>
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Свържете се с нас
+                </Button>
               </Link>
 
               <Link href="/services" >
-              <Button
-                size="lg"
-                variant="outline"
-                className="dark:hover:text-white hover:bg-secondary hover:text-secondary-foreground"
-              >
-                Преглед на услуги
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="dark:hover:text-white hover:bg-secondary hover:text-secondary-foreground"
+                >
+                  Преглед на услуги
+                </Button>
               </Link>
             </motion.div>
           </motion.div>
