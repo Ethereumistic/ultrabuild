@@ -7,7 +7,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
-import { Construction, Building, Trees, Pickaxe } from "lucide-react"
+import { Construction, Building, Trees, Pickaxe, MapPin } from "lucide-react"
 import Link from "next/link"
 
 const services = [
@@ -72,15 +72,30 @@ const services = [
     shortName: "Кариера",
     icon: <Pickaxe className="w-4 h-4" />,
     images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.png"],
-    description: `Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.`,
+    description: (
+      <div className="space-y-4">
+        {/* <p>Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.</p> */}
+        <p><strong>КАРИЕРА „КРАЧОЛА“</strong> с. Бояджик произвежда инертни материали за нуждите на строителството. Камъкът, който се преработва е „доломит“. Намира приложение в жилищно и пътно строителство.</p>
+        <p>Всички инертни материали са сертифицирани съгласно Регламент (ЕС) №305/2011 на Европейския парламент и са в съответствие със стандарти: <strong>EN 12620, ЕN 13043, EN 13242, EN 13450</strong>.</p>
+      </div>
+    ),
     highlights: [
       "Добив и преработка на инертни материали",
       "Производство на трошен камък, фракции и пясък",
       "Материали за пътно, инфраструктурно и сградно строителство",
       "Надеждни доставки за обекти и строителни площадки",
     ],
-    caseStudy:
-      "Производството се осъществява чрез свързаното дружество „СПН КОНСТРУКШЪН“ ООД, което управлява кариера „Крачола“, с. Бояджик. Със собствена материално-техническа база и утвърдени производствени процеси, осигуряваме постоянни обеми и високо качество на инертните материали, използвани както в наши проекти, така и за външни възложители.",
+    caseStudy: (
+      <div className="space-y-4">
+        <p>Производството се осъществява чрез свързаното дружество „СПН КОНСТРУКШЪН“ ООД, което управлява кариера „Крачола“, с. Бояджик. Със собствена материално-техническа база и утвърдени производствени процеси, осигуряваме постоянни обеми и високо качество на инертните материали, използвани както в наши проекти, така и за външни възложители.</p>
+        <div className="pt-2">
+          <a href="https://maps.app.goo.gl/q7BMSP2u7G7jUXTx9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline font-medium">
+            <MapPin className="w-5 h-5 shrink-0" />
+            с. Бояджик
+          </a>
+        </div>
+      </div>
+    ),
     cta: "Start Your Project Today",
   },
 ]
@@ -169,9 +184,9 @@ export default function ServicesPage() {
                     <div className="flex flex-col space-y-6">
                       <div>
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{service.name}</h2>
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                        <div className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
                           {service.description}
-                        </p>
+                        </div>
                       </div>
 
                       {/* Highlights */}
@@ -195,9 +210,9 @@ export default function ServicesPage() {
                       {/* Case Study */}
                       <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 space-y-4">
                         <h3 className="text-xl md:text-2xl font-semibold text-foreground">Нашият опит</h3>
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                        <div className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
                           {service.caseStudy}
-                        </p>
+                        </div>
                       </div>
 
                       {/* CTA Section */}
