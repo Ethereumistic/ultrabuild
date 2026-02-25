@@ -15,7 +15,7 @@ interface Vehicle {
   id: string
   name: string
   description: string
-  image: string
+  image: string | null
   specs: Record<string, string>
 }
 
@@ -26,7 +26,7 @@ interface VehicleGridProps {
 export default function VehicleGrid({ vehicles }: VehicleGridProps) {
   const [api, setApi] = useState<CarouselApi | undefined>()
   const [current, setCurrent] = useState(0)
-  
+
   // 2. Create a ref for the carousel
   const carouselRef = useRef<HTMLDivElement | null>(null)
 
@@ -55,8 +55,8 @@ export default function VehicleGrid({ vehicles }: VehicleGridProps) {
   }
 
   // 3. Create a new handler for thumbnail clicks
-// 3. Create a new handler for thumbnail clicks
-const handleThumbnailClick = (index: number) => {
+  // 3. Create a new handler for thumbnail clicks
+  const handleThumbnailClick = (index: number) => {
     // Tell the carousel to scroll to the new slide
     api?.scrollTo(index)
 
@@ -65,15 +65,15 @@ const handleThumbnailClick = (index: number) => {
 
     // if (isMobile && carouselRef.current) {
     if (carouselRef.current) {
-      
+
       // --- START OF CHANGES ---
 
       // 1. Calculate the element's top position relative to the document
       const elementTop = carouselRef.current.getBoundingClientRect().top + window.scrollY;
-      
+
       // 2. Define your desired offset (20px padding from the top)
-      const offset = 86; 
-      
+      const offset = 86;
+
       // 3. Calculate the final scroll position
       const targetScrollY = elementTop - offset;
 
@@ -89,12 +89,12 @@ const handleThumbnailClick = (index: number) => {
     <div className="space-y-8">
       {/* Main Display */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        
+
         {/* 4. Attach the ref to the Carousel component */}
         <Carousel
           ref={carouselRef} // <-- Attach ref here
           setApi={setApi}
-          className="w-full relative lg:self-start"
+          className="w-full relative lg:self-start lg:order-2"
         >
           <CarouselContent className="h-[400px] lg:h-[500px]">
             {vehicles.map((vehicle) => (
@@ -114,7 +114,7 @@ const handleThumbnailClick = (index: number) => {
         </Carousel>
 
         {/* Specs Section */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center lg:order-1">
           <div className="mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">{selectedVehicle.name}</h2>
             <p className="text-lg text-primary font-semibold">{selectedVehicle.description}</p>
@@ -143,11 +143,10 @@ const handleThumbnailClick = (index: number) => {
               key={vehicle.id}
               // 5. Use the new click handler
               onClick={() => handleThumbnailClick(index)}
-              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                current === index
+              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${current === index
                   ? "border-primary ring ring-primary"
                   : "border-secondary hover:border-primary/50"
-              }`}
+                }`}
             >
               <img
                 src={vehicle.image || "/placeholder.svg"}

@@ -5,7 +5,7 @@ import Link from 'next/link';
 // Define logo URLs
 const LIGHT_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/light.png";
 const DARK_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/dark.png";
-const UB_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo-light.png";
+const UB_LOGO_URL = "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo-ub.png";
 
 /**
  * A responsive logo component for ULTRABUILD.
@@ -36,8 +36,8 @@ const Logo = () => {
            
           
           object-contain       // Ensures aspect ratio is maintained
-          w-[60px] h-[41px]    // Mobile size (default)
-          xl:w-[90px] xl:h-[62px] // Desktop size (md breakpoint)
+
+          w-[120px] h-[82px] // Desktop size (md breakpoint)
         "
         width={90}  // Base width (largest size)
         height={62} // Base height (largest size)
@@ -55,13 +55,13 @@ const Logo = () => {
         width={90}  // Base width (largest size)
         height={62} // Base height (largest size)
       /> */}
-      <span
+      {/* <span
         className="
           font-semibold tracking-wide text-base xl:text-xl text-secondary dark:text-white/80
         "
       >
-        ULTRABUILD
-      </span>
+        UB
+      </span> */}
     </Link>
   );
 };
