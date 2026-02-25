@@ -50,8 +50,8 @@ const storageInfo = {
   contacts: [
     {
       icon: <Mail className="w-4 h-4" />,
-      text: "office@ultrabuild.bg",
-      href: "mailto:office@ultrabuild.bg",
+      text: "ultrabild@gmail.com",
+      href: "mailto:ultrabild@gmail.com",
     },
   ],
   mapUrl: 'https://maps.google.com/maps?q=гр.%20Ямбол,%20ул.%20Ормана%2072',

@@ -163,7 +163,7 @@ const Footer = () => {
                                 </div>
                                 <div className="flex flex-col">
                                     <span className="text-xs text-muted-foreground">Адрес</span>
-                                    <span className="text-sm font-medium">гр. Ямбол, ул. "Димитър Благоев" №19</span>
+                                    <span className="text-sm font-medium">гр. Ямбол, ул. "Димитър Благоев" №19, вх. Е, ап. 180, ет. 5</span>
                                 </div>
                             </li>
                         </ul>

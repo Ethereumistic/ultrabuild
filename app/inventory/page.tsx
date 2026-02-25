@@ -20,7 +20,8 @@ type Vehicle = {
 
 type VehicleData = Record<Exclude<VehicleCategory, "all">, Vehicle[]>
 
-const VEHICLE_DATA: VehicleData = {  snowplows: [
+const VEHICLE_DATA: VehicleData = {
+  snowplows: [
     {
       id: "daf-lf-white",
       name: "DAF LF (Бял)",
@@ -198,7 +199,7 @@ export default function InventoryPage() {
         {/* Header */}
         <div className="mb-4">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
-            Строителна Механизация
+            Механизация
           </h1>
           <p className="text-lg text-muted-foreground">
             Преглед на нашия модерен флот оборудване и техника за строителни дейности
@@ -223,31 +224,31 @@ export default function InventoryPage() {
               value="snowplows"
               className="text-xs sm:text-sm font-medium"
             >
-              Снегорини
+              Строителна
             </TabsTrigger>
             <TabsTrigger
               value="heavy-duty"
               className="text-xs sm:text-sm font-medium"
             >
-              Тежкотоварни
+              Автотранспорт
             </TabsTrigger>
             <TabsTrigger
               value="excavators"
               className="text-xs sm:text-sm font-medium"
             >
-              Багери
+              Поддържаща
             </TabsTrigger>
             <TabsTrigger
               value="backhoe"
               className="text-xs sm:text-sm font-medium"
             >
-              Товарачи
+              Лека
             </TabsTrigger>
             <TabsTrigger
               value="skid-steer"
               className="text-xs sm:text-sm font-medium "
             >
-              Мини
+              Минна
             </TabsTrigger>
           </TabsList>
 
