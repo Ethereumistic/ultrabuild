@@ -10,6 +10,7 @@ import {
   CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import Link from "next/link"
 
 interface Vehicle {
   id: string
@@ -72,7 +73,7 @@ export default function VehicleGrid({ vehicles }: VehicleGridProps) {
       const elementTop = carouselRef.current.getBoundingClientRect().top + window.scrollY;
 
       // 2. Define your desired offset (20px padding from the top)
-      const offset = 86;
+      const offset = 162;
 
       // 3. Calculate the final scroll position
       const targetScrollY = elementTop - offset;
@@ -129,8 +130,10 @@ export default function VehicleGrid({ vehicles }: VehicleGridProps) {
             ))}
           </div>
 
-          <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg">
-            Запитване за това превозно средство
+          <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 ">
+            <Link href="/contact">
+              Запитване за това превозно средство
+            </Link>
           </Button>
         </div>
       </div>
@@ -144,8 +147,8 @@ export default function VehicleGrid({ vehicles }: VehicleGridProps) {
               // 5. Use the new click handler
               onClick={() => handleThumbnailClick(index)}
               className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all ${current === index
-                  ? "border-primary ring ring-primary"
-                  : "border-secondary hover:border-primary/50"
+                ? "border-primary ring ring-primary"
+                : "border-secondary hover:border-primary/50"
                 }`}
             >
               <img

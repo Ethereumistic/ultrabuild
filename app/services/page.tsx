@@ -69,7 +69,7 @@ const services = [
   {
     id: "mining",
     name: "Производство на инертни материали",
-    shortName: "Инертни материали",
+    shortName: "Кариера",
     icon: <Pickaxe className="w-4 h-4" />,
     images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.png"],
     description: `Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.`,
@@ -115,13 +115,13 @@ export default function ServicesPage() {
         <div className="w-full ">
           <Tabs orientation="horizontal" value={activeTab} onValueChange={setActiveTab} className="w-full">
             {/* Tab List */}
-            <div className="flex justify-center mb-4 ">
-              <TabsList className="flex  w-full  gap-2 h-auto bg-muted/50 p-2 rounded-lg">
+            <div className="flex justify-center ">
+              <TabsList className={`grid w-full h-auto mb-4 ${services.length <= 4 ? 'grid-cols-2 md:grid-cols-4' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'}`}>
                 {services.map((service) => (
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="flex items-center gap-2 px-3 py-3 text-base font-medium transition-all"
+                    className="flex items-center text-sm sm:text-base font-medium transition-all"
                   >
                     <span className="hidden md:block mr-2">{service.icon}</span>
                     {service.shortName}

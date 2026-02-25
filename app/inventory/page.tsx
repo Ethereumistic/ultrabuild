@@ -714,7 +714,7 @@ export default function InventoryPage() {
           onValueChange={(value) => setActiveCategory(value as VehicleCategory)}
           className="w-full "
         >
-          <TabsList className="grid w-full grid-cols-3 sm:grid-cols-6 mb-4 pb-13.5 sm:pb-1">
+          <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 mb-4  md:pb-1">
             <TabsTrigger
               value="all"
               className="text-xs sm:text-sm font-medium"

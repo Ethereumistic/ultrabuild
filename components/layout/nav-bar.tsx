@@ -74,7 +74,7 @@ export default function NavBar() {
           description: "Озеленяване, паркови алеи и зони за отдих.",
         },
         {
-          label: "Производство на инертни материали",
+          label: "Кариера",
           href: "/services?tab=mining",
           icon: <Pickaxe className="w-4 h-4" />,
           description: "Добив и производство на инертни материали.",
@@ -104,21 +104,13 @@ export default function NavBar() {
     <nav className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo (Unchanged) */}
-          {/* <Link href="/" className="flex items-center gap-2 shrink-0"> */}
-          {/* <div className="relative">
-              <Image
-                src="https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/logo.png"
-                alt="Ultrabuild"
-                width={180}
-                height={180}
-              />
-            </div> */}
-          <Logo />
-          {/* </Link> */}
+          {/* Left side: Logo */}
+          <div className="flex-1 flex items-center justify-start">
+            <Logo />
+          </div>
 
-          {/* Desktop Navigation (Unchanged) */}
-          <div className="hidden md:flex items-center gap-1 lg:gap-2">
+          {/* Center: Desktop Navigation */}
+          <div className="hidden md:flex shrink-0 items-center justify-center">
             <NavigationMenu>
               <NavigationMenuList>
                 {navItems.map((item) =>
@@ -155,55 +147,47 @@ export default function NavBar() {
             </NavigationMenu>
           </div>
 
-          {/* Right side - Contact & Theme (Unchanged) */}
-          <div className="hidden lg:flex items-center gap-4 border-l border-border pl-12">
-
-
-            <div className="flex items-center lg:flex-col lg:items-start xl:flex-row  gap-3 xl:text-sm text-xs">
-              <div className="flex items-center gap-1">
-                <Phone className="w-4 h-4 text-primary" />
-                <a
-                  href="tel:0893277266"
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  0893 277 266
-                </a>
+          {/* Right side: Contact & Theme & Mobile button */}
+          <div className="flex-1 flex justify-end items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
+              <div className="flex items-center lg:flex-col lg:items-end xl:flex-row gap-3 xl:text-sm text-xs">
+                <div className="flex items-center gap-1">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <a
+                    href="tel:0893277266"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    0893 277 266
+                  </a>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <a
+                    href="mailto:ultrabild@gmail.com"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    ultrabild@gmail.com
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                <Mail className="w-4 h-4 text-primary" />
-                <a
-                  href="mailto:ultrabild@gmail.com"
-                  className="text-foreground hover:text-primary transition-colors"
+
+              {mounted && (
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="p-2 text-foreground hover:bg-muted rounded-md"
+                  aria-label="Toggle theme"
                 >
-                  ultrabild@gmail.com
-                </a>
-              </div>
+                  {theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )}
+                </button>
+              )}
             </div>
 
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 text-foreground hover:bg-muted rounded-md"
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-4 h-4" />
-                ) : (
-                  <Moon className="w-4 h-4" />
-                )}
-              </button>
-            )}
-
-          </div>
-
-
-
-          {/* === CHANGED: Mobile menu button & theme toggle === */}
-          <div className="flex">
-
+            {/* Mobile menu button */}
             <div className="md:hidden flex items-center gap-2">
-
-              {/* NEW: Replaced the old button with the animated one */}
               <AnimatedHamburgerButton
                 isOpen={mobileOpen}
                 onClick={() => setMobileOpen(!mobileOpen)}
