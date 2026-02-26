@@ -291,7 +291,7 @@ const VEHICLE_DATA: VehicleData = {
     },
     {
       id: "auto-17",
-      name: "RENAULT K - 2 броя",
+      name: "RENAULT K",
       category: "autotransport",
       image: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/opt/autotransport/16.webp",
       description: "Товарен автомобил",

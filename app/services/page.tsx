@@ -14,7 +14,7 @@ const services = [
   {
     id: "roads",
     name: "Инфраструктура и пътно строителство",
-    shortName: "Пътища",
+    shortName: "Инфраструктура",
     icon: <Construction className="w-4 h-4" />,
     images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.webp"],
     description: `Квалифицирани и амбициозни инженери и технически специалисти с десетилетия опит. Оборудвани с необходима пътностроителна техника, за развитието на съвременната пътна инфраструктура.`,
@@ -70,7 +70,7 @@ const services = [
     name: "Производство на инертни материали",
     shortName: "Кариера",
     icon: <Pickaxe className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.webp"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/6.webp"],
     description: (
       <div className="space-y-4">
         {/* <p>Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.</p> */}
@@ -88,7 +88,7 @@ const services = [
       <div className="space-y-4">
         <p>Производството се осъществява чрез свързаното дружество „СПН КОНСТРУКШЪН“ ООД, което управлява кариера „Крачола“, с. Бояджик. Със собствена материално-техническа база и утвърдени производствени процеси, осигуряваме постоянни обеми и високо качество на инертните материали, използвани както в наши проекти, така и за външни възложители.</p>
         <div className="pt-2">
-          <a href="https://maps.app.goo.gl/q7BMSP2u7G7jUXTx9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline font-medium">
+          <a href="https://maps.app.goo.gl/5qif64B2CzM4aCMy6" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline font-medium">
             <MapPin className="w-5 h-5 shrink-0" />
             с. Бояджик
           </a>

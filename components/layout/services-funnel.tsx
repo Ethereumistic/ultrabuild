@@ -36,7 +36,7 @@ const services = [
     id: 4,
     title: "Кариера",
     description: "Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство",
-    image: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.webp",
+    image: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/6.webp",
     target: "Обществени и частни",
     href: "/services?tab=mining",
   },

@@ -255,11 +255,11 @@ export default function NavBar() {
                       0893 277 266
                     </a>
                     <a
-                      href="mailto:office@ultrabuild.bg"
+                      href="mailto:ultrabild@gmail.com"
                       className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
                     >
                       <Mail className="w-4 h-4 text-primary" />
-                      office@ultrabuild.bg
+                      ultrabild@gmail.com
                     </a>
                   </div>
                 </div>
