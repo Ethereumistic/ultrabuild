@@ -82,7 +82,7 @@ const PROJECT_DATA = {
         "Устойчивост и дълготрайност",
         "Съответствие с международни стандарти",
       ],
-      image: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/projects/road/dimitar-blagoev/final.png",
+      image: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/projects/road/dimitar-blagoev/final.webp",
     },
   ],
 }

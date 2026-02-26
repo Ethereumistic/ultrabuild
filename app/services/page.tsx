@@ -16,7 +16,7 @@ const services = [
     name: "Инфраструктура и пътно строителство",
     shortName: "Пътища",
     icon: <Construction className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.webp"],
     description: `Квалифицирани и амбициозни инженери и технически специалисти с десетилетия опит. Оборудвани с необходима пътностроителна техника, за развитието на съвременната пътна инфраструктура.`,
     highlights: [
       "Съвременна техника и машини",
@@ -34,7 +34,7 @@ const services = [
     name: "Саниране на сгради",
     shortName: "Саниране",
     icon: <Building className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/2.png"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/2.webp"],
     description: `Трансформирайте имотите си с нашите цялостни услуги за реставрация на фасади и обновяване на сгради. Ние сме специализирани в трансформации на търговски и жилищни сгради, съчетавайки модерни техники с вечна естетика.`,
     highlights: [
       "Саниране на търговски и жилищни сгради",
@@ -52,7 +52,7 @@ const services = [
     name: "Градско и парково развитие",
     shortName: "Паркове",
     icon: <Trees className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/3.png"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/3.webp"],
     description: `Създаване на оживени обществени пространства и зони за отдих, които подобряват живота в общността. Нашите услуги за градско и парково развитие са насочени към общини и частни предприемачи, търсещи устойчиви, иновативни решения.`,
     highlights: [
       "Изграждане на обществени паркове",
@@ -70,7 +70,7 @@ const services = [
     name: "Производство на инертни материали",
     shortName: "Кариера",
     icon: <Pickaxe className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.png"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/4.webp"],
     description: (
       <div className="space-y-4">
         {/* <p>Добив и преработка на висококачествени инертни материали за пътно, инфраструктурно и сградно строителство, с гарантирано качество и нормативно съответствие.</p> */}

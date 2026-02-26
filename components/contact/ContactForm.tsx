@@ -34,18 +34,23 @@ const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"
 const projectImages = [
   {
     id: 1,
-    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/1.png",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/1.webp",
     alt: "Highway Infrastructure Project",
   },
   {
     id: 2,
-    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/2.png",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/2.webp",
     alt: "Urban Development Project",
   },
   {
     id: 3,
-    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/3.png",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/3.webp",
     alt: "Building Renovation Project",
+  },
+  {
+    id: 4,
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/hero/4.webp",
+    alt: "Mining Project",
   },
 ]
 
