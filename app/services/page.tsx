@@ -16,8 +16,7 @@ const services = [
     name: "Инфраструктура и пътно строителство",
     shortName: "Пътища",
     icon: <Construction className="w-4 h-4" />,
-    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png",
-      "https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png"],
+    images: ["https://cdn.jsdelivr.net/gh/Ethereumistic/ultrabuild-assets/funnel/1.png"],
     description: `Квалифицирани и амбициозни инженери и технически специалисти с десетилетия опит. Оборудвани с необходима пътностроителна техника, за развитието на съвременната пътна инфраструктура.`,
     highlights: [
       "Съвременна техника и машини",
