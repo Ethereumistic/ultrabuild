@@ -119,11 +119,11 @@ export const baseMetadata: Metadata = {
         description: siteConfig.description,
         images: [
             {
-                url: "/og-image.jpg", // You'll need to create this
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
                 alt: `${siteConfig.name} - Строителна компания`,
-                type: "image/png",
+                type: "image/jpeg",
             },
         ],
     },
@@ -133,7 +133,12 @@ export const baseMetadata: Metadata = {
         card: "summary_large_image",
         title: `${siteConfig.name} | Пътно Строителство и Благоустройство`,
         description: siteConfig.shortDescription,
-        images: ["/og-image.jpg"],
+        images: [
+            {
+                url: "/og-image.jpg",
+                alt: `${siteConfig.name} - Строителна компания`,
+            },
+        ],
     },
 
     // Icons configuration
