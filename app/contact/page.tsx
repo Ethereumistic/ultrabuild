@@ -6,6 +6,7 @@ import {
   Phone,
   Pin,
   Warehouse,
+  Mountain,
 } from "lucide-react"
 // CHANGED: Added .tsx extensions to imports to fix resolution error
 import { ContactForm } from "@/components/contact/ContactForm"
@@ -57,6 +58,32 @@ const storageInfo = {
   mapUrl: 'https://maps.google.com/maps?q=гр.%20Ямбол,%20ул.%20Ормана%2072',
 }
 
+const mineInfo = {
+  title: "Кариера \"Крачола\"",
+  icon: <Mountain className="w-5 h-5" />,
+  address: ["с. Бояджик"],
+  contacts: [
+    {
+      icon: <Phone className="w-4 h-4" />,
+      text: "+359 896 382 895",
+      name: "Централен Офис",
+      href: "tel:+359896382895",
+    },
+    {
+      icon: <Phone className="w-4 h-4" />,
+      text: "+359 893 277 266",
+      name: "Стефан Стефанов",
+      href: "tel:+359893277266",
+    },
+    {
+      icon: <Mail className="w-4 h-4" />,
+      text: "ultrabild@gmail.com",
+      href: "mailto:ultrabild@gmail.com",
+    },
+  ],
+  mapUrl: 'https://maps.app.goo.gl/5qif64B2CzM4aCMy6',
+}
+
 // --- Main Page Component ---
 
 export default function ContactPage() {
@@ -99,30 +126,42 @@ export default function ContactPage() {
 
           {/* Column 2: Info Area (spans 2) */}
           <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* HQ */}
-              <motion.div
-                {...fadeIn(0.6)}
-                className="md:col-span-1"
-              >
-                <ContactInfoCard {...hqInfo} className="h-full" />
-              </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {/* Left side: HQ + WorkHours */}
+              <div className="lg:col-span-1 flex flex-col gap-4 h-full">
+                {/* HQ */}
+                <motion.div
+                  {...fadeIn(0.6)}
+                  className="flex-1"
+                >
+                  <ContactInfoCard {...hqInfo} className="h-full" />
+                </motion.div>
 
-              {/* Storage */}
-              <motion.div
-                {...fadeIn(0.8)}
-                className="md:col-span-1"
-              >
-                <ContactInfoCard {...storageInfo} className="h-full" />
-              </motion.div>
+                {/* Work Hours */}
+                <motion.div
+                  {...fadeIn(0.4)}
+                >
+                  <WorkHours />
+                </motion.div>
+              </div>
 
-              {/* Work Hours (spans both columns) */}
-              <motion.div
-                {...fadeIn(0.4)}
-                className="md:col-span-2"
-              >
-                <WorkHours />
-              </motion.div>
+              {/* Right side: Storage + Mine stacked */}
+              <div className="lg:col-span-1 flex flex-col gap-4 h-full">
+                {/* Storage */}
+                <motion.div
+                  {...fadeIn(0.8)}
+                  className="flex-1"
+                >
+                  <ContactInfoCard {...storageInfo} className="h-full" />
+                </motion.div>
+
+                {/* Mine */}
+                <motion.div
+                  {...fadeIn(1.0)}
+                >
+                  <ContactInfoCard {...mineInfo} className="h-full" />
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

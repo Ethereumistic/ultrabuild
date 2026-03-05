@@ -25,10 +25,7 @@ import {
 import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// --- IMPORTANT ---
-// 1. Get your free access key from https://web3forms.com/
-// 2. Paste it here to replace the placeholder
-const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"
+const WEB3FORMS_ACCESS_KEY = "1040e004-4077-41f4-a346-031d7f7577a1"
 
 // --- Image Slider Data ---
 const projectImages = [
